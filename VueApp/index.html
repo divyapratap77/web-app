@@ -1,0 +1,25 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+  <hr>
+  <br>
+  <center>
+    <p>Enter text</p>
+    <input type="text" v-on:input="input = $event.target.value">
+    <p>{{ UPPER }}</p>
+  </center>
+  <hr>
+</div>
+
+    new Vue({
+      el: '#app',
+      data: {
+        input: ''
+      },
+      computed: {
+        UPPER: function() {
+          return this.input.toUpperCase();
+        }
+      }
+
+    });
